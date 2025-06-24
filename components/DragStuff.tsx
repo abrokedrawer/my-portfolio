@@ -11,44 +11,49 @@ function DragStuff({
 }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [startPos, setStartPos] = useState({ x: window.innerWidth / 2 - 300, y: 50 });
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-  const calculatePosition = () => {
-    const isMobile = window.innerWidth < 768; 
-    const centerX = isMobile ? window.innerWidth / 2 - 250 : window.innerWidth / 2 - 500;
-    const centerY = isMobile ? 30 : 50;
-    setPosition({ x: centerX, y: centerY });
-  };
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (mobile) {
+        setPosition({ x: 0, y: 0 }); // Full screen on mobile
+      } else {
+        // Center on desktop
+        setPosition({ 
+          x: window.innerWidth / 2 - 500, 
+          y: 50 
+        });
+      }
+    };
 
-  calculatePosition();
-
-  const handleResize = () => calculatePosition();
-  window.addEventListener('resize', handleResize);
-
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
-
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (isMobile) return; // Disable dragging on mobile
     setIsDragging(true);
     setStartPos({
       x: e.clientX - position.x,
       y: e.clientY - position.y
-    })
-  }
+    });
+  };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
+    if (!isDragging || isMobile) return;
     setPosition({
       x: e.clientX - startPos.x,
       y: e.clientY - startPos.y
-    })
-  }
+    });
+  };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-  }
+  };
 
   return (
     <div className='fixed inset-0 z-50'
@@ -57,38 +62,48 @@ function DragStuff({
       onMouseLeave={handleMouseUp}>
       
       <div 
-        className='absolute w-180 md:w-240 bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden'
+        className={`absolute bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden ${
+          isMobile ? 'inset-0' : 'w-[70rem] max-w-[90vw] min-w-[20rem]'
+        }`}
         style={{
-          transform: `translate(${position.x}px, ${position.y}px)`,
-          cursor: isDragging ? 'grabbing' : 'grab',
-          maxHeight: '80vh', // 80% of viewport height
+          transform: isMobile ? 'none' : `translate(${position.x}px, ${position.y}px)`,
+          cursor: isDragging ? 'grabbing' : isMobile ? 'default' : 'grab',
+          maxHeight: '80vh',
           height: 'auto',
           display: 'flex',
-          width: '70rem',     // ← Edit this value
-          minWidth: '20rem',  // ← Minimum width
-          maxWidth: '90vw',
           flexDirection: 'column'
         }}>
 
-        {/* Window header */}
-        <div
-          className='bg-gray-900 px-4 py-2 border-b border-gray-300 flex justify-between items-center' 
-          onMouseDown={handleMouseDown}>
-          <h3 className='font-bold text-2xl text-white'>{title}</h3>
-          <button onClick={onClose} className='text-gray-100 hover:text-gray-400'>
-            {`[`} X {`]`}
+        {/* Window header - hidden on mobile */}
+        {!isMobile && (
+          <div
+            className='bg-gray-900 px-4 py-2 border-b border-gray-300 flex justify-between items-center' 
+            onMouseDown={handleMouseDown}>
+            <h3 className='font-bold text-2xl text-white'>{title}</h3>
+            <button onClick={onClose} className='text-gray-100 hover:text-gray-400'>
+              {`[`} X {`]`}
+            </button>
+          </div>
+        )}
+
+        {/* Close button for mobile */}
+        {isMobile && (
+          <button 
+            onClick={onClose}
+            className='absolute top-2 right-2 z-10 bg-gray-800 text-white p-2 rounded-full'
+          >
+            ✕
           </button>
-        </div>
+        )}
 
         {/* Scrollable content area */}
         <div 
-          className='flex-1 overflow-y-auto p-0.5 bg-white cursor-default'
+          className='flex-1 overflow-y-auto bg-gray-900'
           style={{
-            maxHeight: 'calc(80vh - 50px)' // Account for header height
+            maxHeight: isMobile ? '100vh' : 'calc(80vh - 50px)'
           }}>
           {children}
         </div>
-
       </div>
     </div>
   )
