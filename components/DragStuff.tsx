@@ -19,9 +19,8 @@ function DragStuff({
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
       if (mobile) {
-        setPosition({ x: 0, y: 0 }); // Full screen on mobile
+        setPosition({ x: 0, y: 0 }); 
       } else {
-        // Center on desktop
         setPosition({ 
           x: window.innerWidth / 2 - 500, 
           y: 50 
@@ -35,7 +34,7 @@ function DragStuff({
   }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (isMobile) return; // Disable dragging on mobile
+    if (isMobile) return;
     setIsDragging(true);
     setStartPos({
       x: e.clientX - position.x,
