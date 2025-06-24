@@ -10,22 +10,21 @@ function ContactForm() {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-800 rounded-lg">
-      <h2 className="text-2xl font-bold text-blue-300 mb-4">Get In Touch</h2>
-      <p className="text-gray-300 mb-6">
-        Have a project in mind or want to discuss opportunities? 
-        Click the button below to send me an email directly from your mail client.
+    <div className=" bg-gray-800 rounded-lg">
+      <h2 className="text-4xl pt-10 font-bold text-blue-200 mb-4">Contact Me</h2>
+      <p className="text-gray-300 mb-6 text-lg">
+        Click the button below to send me an email directly 
       </p>
       
       <button
         onClick={handleContactClick}
-        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors"
+        className="px-6 py-3 text-xl bg-blue-400 hover:bg-blue-600 hover:cursor-pointer rounded-md text-white font-medium transition-colors"
       >
         Send Email
       </button>
       
-      <p className="text-gray-400 text-sm mt-4">
-        Alternatively, you can email me directly at: {emailAddress}
+      <p className="text-gray-400 text-medium pb-10 mt-4">
+        Alternatively, you can email me directly at: ----------
       </p>
     </div>
   )

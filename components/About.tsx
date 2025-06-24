@@ -26,9 +26,9 @@ function About() {
     {/* SCROLLABLE SECTIOn*/}
     <div className='overflow-y-auto flex-1'>
     
-    <div className='mt-4 justify-items-start pl-2 text-xl'>
+    <div className='mt-4 justify-items-start pl-2 text-xl '>
     <div className='justify-items-start'>
-        im <span className='text-3xl text-yellow-200'>Aditya Negi
+        im <span className='text-3xl text-yellow-200 '>Aditya Negi
             </span>, a Btech Graduate. I do...
         <div>
             <ul className='justify-items-start pl-3 pt-3 '>

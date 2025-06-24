@@ -14,10 +14,21 @@ function DragStuff({
   const [startPos, setStartPos] = useState({ x: window.innerWidth / 2 - 300, y: 50 });
 
   useEffect(() => {
-    const centerX = window.innerWidth / 2 - 500; 
-    const centerY = 50;
+  const calculatePosition = () => {
+    const isMobile = window.innerWidth < 768; 
+    const centerX = isMobile ? window.innerWidth / 2 - 250 : window.innerWidth / 2 - 500;
+    const centerY = isMobile ? 30 : 50;
     setPosition({ x: centerX, y: centerY });
-  }, []);
+  };
+
+  calculatePosition();
+
+  const handleResize = () => calculatePosition();
+  window.addEventListener('resize', handleResize);
+
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
