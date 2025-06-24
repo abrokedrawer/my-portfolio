@@ -97,7 +97,7 @@ function DragStuff({
 
         {/* Scrollable content area */}
         <div 
-          className='flex-1 overflow-y-auto bg-gray-900'
+          className='flex-1 overflow-y-auto bg-gray-900 cursor-default'
           style={{
             maxHeight: isMobile ? '100vh' : 'calc(80vh - 50px)'
           }}>

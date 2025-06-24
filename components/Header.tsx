@@ -1,45 +1,74 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useTheme } from 'next-themes'
 
-
 export default function Header() {
-  const [soundOn, setSoundOn] = useState(true)
+  const [soundOn, setSoundOn] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
+
   const toggleSound = () => {
-    setSoundOn(!soundOn)
+    setSoundOn(prev => !prev)
   }
 
-
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-   useEffect(() => {
+  useEffect(() => {
     setMounted(true)
+    
+    if (typeof window !== 'undefined') {
+      audioRef.current = new Audio('/music/bgm01.mp3')
+      audioRef.current.loop = true
+      audioRef.current.volume = 0.2
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current = null
+      }
+    }
   }, [])
+
+  useEffect(() => {
+    if (!audioRef.current) return
+    
+    const handleSound = async () => {
+      try {
+        if (soundOn) {
+          await audioRef.current?.play()
+        } else {
+          audioRef.current?.pause()
+        }
+      } catch (error) {
+        console.error("Audio error:", error)
+        setSoundOn(false)
+      }
+    }
+
+    handleSound()
+  }, [soundOn])
 
   if (!mounted) return null
 
   return (
     <header className="pl-8 py-2">
       <nav className="text-gray-200 text-xl flex h-30 gap-1.5">
-        <div className="flex gap-7 items-center ">
-          {/* Light/Dark Mode Toggle */}
+        <div className="flex gap-7 items-center">
+          {/* Fixed Light/Dark Mode Toggle */}
           <button 
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
             className="hover:cursor-pointer"
+            aria-label={`Toggle ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
           >
-            {theme === 'dark' ? (
-              'LHT'
-            ) : (
-              'DRK'
-            )}
+            {resolvedTheme === 'dark' ? 'DRK' : 'DRK'}
           </button>
 
-          {/* Sound Toggle */}
+          {/* Sound Toggle (unchanged) */}
           <button 
             onClick={toggleSound}
             className="hover:cursor-pointer"
+            aria-label={soundOn ? "Mute sound" : "Unmute sound"}
           >
             {soundOn ? (
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-12">
