@@ -28,4 +28,10 @@ export const illustrationImages: GalleryImage[] = [
     alt: 'Environment concept art',
     caption: 'Original Character'
   },
+  {
+    id: '5',
+    src: '/illusPics/realPeople02.png',
+    alt: 'Environment concept art',
+    caption: 'Stylized Art'
+  },
 ]
