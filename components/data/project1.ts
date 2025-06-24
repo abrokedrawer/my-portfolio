@@ -4,7 +4,7 @@ const project1 = {
   description: 'Minimalist portfolio website built with Next.js and Tailwind CSS',
   tags: ['Next.js', 'Tailwind CSS', 'TypeScript', 'ReactJS'],
   image: `/projectsPic/pf02.png`,
-  link: 'https://github.com/abrokedrawer?tab=repositories'
+  link: 'https://github.com/abrokedrawer/my-portfolio'
 };
 
 export default project1;
