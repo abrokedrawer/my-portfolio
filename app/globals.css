@@ -39,7 +39,8 @@ body {
 .card::after, .card::before {
   content: '';
   position: absolute;
-  background-image: conic-gradient(from var(--angle), rgb(139, 139, 235) );
+  background-image: conic-gradient(
+    rgb(139, 139, 235));
   height: calc(100% + 6px); 
   width: calc(100% + 6px); 
   z-index: -1;
@@ -53,4 +54,11 @@ body {
   filter: blur(1.5rem);
   opacity: 0.5;
   margin: 3px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+  
 }

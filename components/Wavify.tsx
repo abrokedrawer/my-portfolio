@@ -15,7 +15,7 @@ function Wavify() {
         }}
         />
       <Wave className='absolute bottom-0 left-0 w-full h-full'
-        fill='#50387d'
+        fill='url(#wave-gradient)'
         paused={false}
         options={{
           height: 45,
@@ -23,7 +23,15 @@ function Wavify() {
           speed: 0.25,
           points: 3
         }}
-        />
+        >
+
+        <defs>
+          <linearGradient id="wave-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#223046" /> {/* Blue-500 */}
+            <stop offset="100%" stopColor="#44336b" /> {/* Purple-500 */}
+          </linearGradient>
+        </defs>
+        </Wave>
     </div>
   )
 }
