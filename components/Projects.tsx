@@ -26,7 +26,7 @@ export function Projects({ projects }: ProjectsProps) {
       {/* Image Expansion Modal */}
       <ImageExpansionModal />
       
-      <h2 className="text-2xl font-bold text-blue-200 mb-4">DEVELOPMENT</h2>
+      <h2 className="text-4xl font-bold text-yellow-200  m-8">DEVELOPMENT PROJECTS</h2>
       
       <div className="space-y-4">
         {projects.map((project) => (
@@ -74,8 +74,8 @@ export function Projects({ projects }: ProjectsProps) {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex justify-items-center mt-20 w-fit px-3 py-1
-                   bg-blue-400 hover:bg-blue-600 rounded text-medium text-white transition-colors"
+                  className="flex justify-items-center mt-15 w-fit px-3 py-1
+                   bg-purple-400 hover:bg-purple-600 rounded text-medium text-white transition-colors"
                 >
                   View Project
                 </a>
@@ -86,7 +86,7 @@ export function Projects({ projects }: ProjectsProps) {
       </div>
       
       {/* Illustration Projects Section */}
-      <h2 className="text-2xl font-bold text-blue-200 mt-8 mb-4">ILLUSTRATION</h2>
+      <h2 className="text-4xl font-bold font-sans text-yellow-200 mb-8">ILLUSTRATION PROJECTS</h2>
       <div className="bg-gray-700 p-4 rounded-lg">
         <Gallery images={illustrationImages} />
       </div>

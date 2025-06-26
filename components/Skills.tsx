@@ -21,7 +21,7 @@ return (
     <div className="space-y-8 p-4 bg-gray-800">
       {/* TOOLS SECTION */}
       <div>
-        <h1 className="text-2xl font-bold mb-4 text-blue-300">DESIGN & DEVELOPMENT TOOLS</h1>
+        <h1 className="text-2xl font-bold mb-4 text-yellow-200 ">DESIGN & DEVELOPMENT TOOLS</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {tools.map((tool) => (
             <div 
@@ -37,7 +37,7 @@ return (
 
       {/* DEVELOPMENT SECTION */}
       <div className='border-t-1 pt-5'>
-        <h1 className="text-2xl font-bold mb-4 text-blue-300 ">LANGUAGES & FRAMEWORKS</h1>
+        <h1 className="text-2xl font-bold mb-4 text-yellow-200  ">LANGUAGES & FRAMEWORKS</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {devSkills.map((skill) => (
             <div 

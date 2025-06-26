@@ -16,7 +16,7 @@ function About() {
     </div>
         
         <div className='align-middle'>
-            <h1 className="text-4xl font-bold">Aditya Negi</h1>
+            <h1 className="text-4xl font-bold text-yellow-200">Aditya Negi</h1>
       <p className="mb-2 text-xl">
         Developer & Illustrator | B.Tech in Computer Science
       </p>
