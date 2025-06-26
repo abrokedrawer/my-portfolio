@@ -23,10 +23,9 @@ export default function MainContent() {
     }
 
     return (
-        <main className="relative flex flex-col items-center justify-center min-h-[60vh] 
-        text-center w-full px-4 sm:px-0 sm:max-w-[55%] mx-auto 
-        border border-gray-800 dark:border-gray-200 rounded-lg p-2 
-        bg-gradient-to-t from-gray-800 to-gray-900">
+        <main className="card relative flex flex-col items-center justify-center min-h-[60vh] 
+        text-center w-full px-4 sm:px-0 sm:max-w-[55%] mx-auto rounded-lg
+        bg-gradient-to-t from-gray-800 to-gray-900 z-index-1">
 
             {/* Home indicator */}
             <span className="absolute -top-3 left-4 bg-white px-2 text-gray-500 text-xl rounded-sm">

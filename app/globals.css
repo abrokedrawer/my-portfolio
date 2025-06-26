@@ -30,3 +30,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before {
+  content: '';
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), rgb(139, 139, 235) );
+  height: calc(100% + 6px); 
+  width: calc(100% + 6px); 
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px; 
+}
+
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  margin: 3px;
+}
