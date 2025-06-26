@@ -27,8 +27,8 @@ function Wavify() {
 
         <defs>
           <linearGradient id="wave-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="#223046" /> {/* Blue-500 */}
-            <stop offset="100%" stopColor="#44336b" /> {/* Purple-500 */}
+            <stop offset="0%" stopColor="#182233" /> {/* Blue-500 */}
+            <stop offset="100%" stopColor="#4e3b7c" /> {/* Purple-500 */}
           </linearGradient>
         </defs>
         </Wave>
