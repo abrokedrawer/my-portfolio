@@ -7,13 +7,14 @@ export function Skills() {
     'Unity 2D/3D',
     'Adobe Illustrator',
     'VS Code',
-    'RPG Maker'
+    'RPG Maker',
+    'Figma - Wireframes'
   ]
 
   const devSkills = [
     'C#', 'C', 'Python', 'JavaScript', 'HTML/CSS', 'MySQL', 
     'React', 'Next.js', 'Git', 'Matlab', 'LaTeX', 'Django' , 'MongoDB',
-    'Jest', 'TailwindCSS'
+    'Jest', 'TailwindCSS', 'UI/UX'
   ]
 
 return (

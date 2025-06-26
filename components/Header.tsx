@@ -58,7 +58,7 @@ export default function Header() {
           {/* Fixed Light/Dark Mode Toggle */}
           <button 
             onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="hover:cursor-pointer"
+            className=""
             aria-label={`Toggle ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {resolvedTheme === 'dark' ? 'DRK' : 'DRK'}
