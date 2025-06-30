@@ -1,4 +1,4 @@
-const project6 = {
+const project7 = {
   id: 'hangman-v1',
   title: 'Hangman Replica',
   description: 'Clone of the word game Hangman',
@@ -7,4 +7,4 @@ const project6 = {
   link:'https://github.com/abrokedrawer/littlelemon'
 };
 
-export default project6;
+export default project7;
