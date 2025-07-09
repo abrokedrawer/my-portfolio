@@ -9,6 +9,7 @@ function DragStuff({
   children: React.ReactNode;
   onClose: () => void;
 }) {
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
@@ -19,11 +20,11 @@ function DragStuff({
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
       if (mobile) {
-        setPosition({ x: 0, y: 0 }); 
+        setPosition({ x: 0, y: 0 });
       } else {
-        setPosition({ 
-          x: window.innerWidth / 2 - 500, 
-          y: 50 
+        setPosition({
+          x: window.innerWidth / 2 - 500,
+          y: 50
         });
       }
     };
@@ -59,8 +60,7 @@ function DragStuff({
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}>
-      
-      <div 
+      <div
         className={`absolute bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden ${
           isMobile ? 'inset-0' : 'w-[70rem] max-w-[90vw] min-w-[20rem]'
         }`}
