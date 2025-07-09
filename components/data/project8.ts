@@ -4,7 +4,7 @@ const project8 = {
   description: 'A website to order food from/ reservse a table at Little Lemon',
   tags: ['Next.js', 'Tailwind CSS', 'Javascript ', 'ReactJS', 'Dev Tools Storage'],
   image: `/projectsPic/littleLemon.png`,
-  link:'https://n8gdb6wl-3000.inc1.devtunnels.ms/'
+  link:'https://github.com/abrokedrawer/metaFinal'
 };
 
 export default project8;
