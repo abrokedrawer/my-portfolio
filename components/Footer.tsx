@@ -33,7 +33,7 @@ function Footer() {
     <Image src="/insta.png" height={40} width={40} alt='Instagram'/>
   </a>
 </div>
-    © - Aditya Negi
+    Based on Sharlene Yap{`'`}s portfolio
     </div>
   )
 }
