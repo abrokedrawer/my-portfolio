@@ -15,9 +15,10 @@ import project5 from "./data/project5";
 import project6 from "./data/project6";
 import project7 from "./data/project7";
 import project8 from "./data/project8";
+import project9 from "./data/project9";
 
 export default function MainContent() {
-    const projects = [project2, project3, project4, project8, project6, project5, project7, project1];
+    const projects = [project2, project3, project4, project8, project6, project9, project5, project7, project1];
     const [openWindow, setOpenWindow] = useState<string | null>(null);
 
     const handleLinkClick = (windowName: string) => {
