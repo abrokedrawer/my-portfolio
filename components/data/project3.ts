@@ -3,7 +3,7 @@ const project3 = {
   title: 'Pokemon Clone - RPG Game',
   description: 'RPG turn based battle game with exploration elements, type advantages/disadvantages and random encounters',
   tags: ['C#', 'Unity', 'OOP'],
-  image: `/projectsPic/Unity01.png`,
+  image: `/projectsPic/unity03.png`,
   link:'https://github.com/abrokedrawer/pokemon-unity'
 };
 
