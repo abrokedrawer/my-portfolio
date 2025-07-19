@@ -1,13 +1,16 @@
 'use client'
 
 import { useState, useEffect, useRef } from "react"
-import { useTheme } from 'next-themes'
+
+function setColor(input: HTMLInputElement) {
+  document.body.style.setProperty('--base-color', input.value);
+}
 
 export default function Header() {
   const [soundOn, setSoundOn] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [mounted, setMounted] = useState(false)
-  const { resolvedTheme, setTheme } = useTheme()
+
 
   const toggleSound = () => {
     setSoundOn(prev => !prev)
@@ -53,17 +56,16 @@ export default function Header() {
 
   return (
     <header className="pl-8 py-2">
-      <nav className="text-gray-200 text-xl flex h-30 gap-1.5">
+      <nav className="text-gray-200 text-3xl flex h-30 gap-1.5">
         <div className="flex gap-7 items-center">
           {/* Fixed Light/Dark Mode Toggle */}
-          <button 
-            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className=""
-            aria-label={`Toggle ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            {resolvedTheme === 'dark' ? 'DRK' : 'DRK'}
-          </button>
-
+          <label htmlFor="base-color-input" className="hover:cursor-pointer"> THEME
+            <input type="color"
+            className="absolute opacity-0 w-0 h-0 hover:cursor-pointer"
+            id="base-color-input"
+            onChange={(e) => setColor(e.target as HTMLInputElement)} />
+             </label>
+            
           {/* Sound Toggle (unchanged) */}
           <button 
             onClick={toggleSound}

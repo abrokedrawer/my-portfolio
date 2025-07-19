@@ -29,20 +29,21 @@ export default function MainContent() {
         
         <main className="card relative flex flex-col items-center justify-center min-h-[60vh] 
         text-center w-full px-4 sm:px-0 sm:max-w-[55%] mx-auto rounded-lg  
-        bg-gradient-to-t from-gray-800 to-gray-900 z-index-1">
+        bg-gradient-to-t from-[var(--base-color)] to-[var(--base-dark)] 
+        z-index-1">
 
             {/* Home indicator */}
-            <span className="absolute -top-3 left-4 bg-white px-2 text-gray-500 text-xl rounded-sm">
+            <span className="absolute -top-3 left-4 bg-white px-2 text-gray-500 text-xl rounded-sm border-black">
                 home
             </span>
 
             {/* Main content */}
             <div className="w-full relative overflow:hidden">
                 <div className="mb-8 sm:mb-12">
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-4">
-                        hi! i{`'`}m <span className="text-yellow-200">Aditya Negi</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-4 text-[var(--text-color)]">
+                        hi! i{`'`}m <span className="text-[var(--brand-color)]">Aditya Negi</span>
                     </h1>
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-400">
+                    <p className="text-lg sm:text-xl md:text-2xl text-[var(--secondary-text-color)]">
                         developer, illustrator
                     </p>
                 </div>

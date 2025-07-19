@@ -25,7 +25,21 @@
 }
 
 body {
-  background: var(--background);
+  --base-color: #2e3046;
+  --base-color-bg: oklch(from var(--base-color) calc(l * 0.4) c h);;
+  --base-dark: oklch(from var(--base-color) calc(l * 0.4) c h);
+
+  --surface-color: oklch(from var(--base-color) calc(l * 1.2) c h);
+
+  --text-color: oklch(from var(--base-color) calc(l * 3) c h);
+  --secondary-text-color: oklch(from var(--base-color) calc(l * 2.5) c h);
+  --brand-color: oklch(from var(--base-color) calc(l * 4) calc(c * 4) calc(h * 12));
+
+  --wave-one:rgb(108, 115, 161);
+  --wave-two: rgb(48, 48, 73);
+  --wave-grad: rgb(27, 25, 50);
+
+  background: var(--base-color);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -40,7 +54,7 @@ body {
   content: '';
   position: absolute;
   background-image: conic-gradient(
-    rgb(139, 139, 235));
+    oklch(from var(--base-color) calc(l * 2) c calc(h*2.4) ) );
   height: calc(100% + 6px); 
   width: calc(100% + 6px); 
   z-index: -1;
@@ -51,7 +65,7 @@ body {
 }
 
 .card::before{
-  filter: blur(1.5rem);
+  filter: blur(.5rem);
   opacity: 0.5;
   margin: 3px;
 }

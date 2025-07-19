@@ -16,7 +16,7 @@ function About() {
     </div>
         
         <div className='align-middle'>
-            <h1 className="text-4xl font-bold text-yellow-200">Aditya Negi</h1>
+            <h1 className="text-4xl font-bold text-[var(--brand-color)]">Aditya Negi</h1>
       <p className="mb-2 text-xl">
         Developer & Illustrator | B.Tech in Computer Science
       </p>
@@ -28,7 +28,7 @@ function About() {
     
     <div className='mt-4 justify-items-start pl-2 text-xl '>
     <div className='justify-items-start'>
-        im <span className='text-3xl text-yellow-200 '>Aditya Negi
+        im <span className='text-3xl text-[var(--brand-color)] '>Aditya Negi
             </span>, a Btech Graduate. I do...
         <div>
             <ul className='justify-items-start pl-3 pt-3 '>
@@ -69,9 +69,9 @@ function About() {
     LANGUAGE PROFECIENCY
     </span> 
     <div className='my-2 pl-3 border-gray-lightest justify-items-start pb-5'>
-        <p>|  Native fluency in <span className="font-bold text-xl/2 text-yellow-200">Hindi </span> 
-         and <span className="font-bold text-xl/2 text-yellow-200">English</span> </p> 
-        <p>|  N5/Beginner in <span className='font-bold text-xl/2 text-yellow-200'>Japanese</span></p>
+        <p>|  Native fluency in <span className="font-bold text-xl/2 text-[var(--brand-color)]">Hindi </span> 
+         and <span className="font-bold text-xl/2 text-[var(--brand-color)]">English</span> </p> 
+        <p>|  N5/Beginner in <span className='font-bold text-xl/2 text-[var(--brand-color)]'>Japanese</span></p>
     </div>
 </div>
 
