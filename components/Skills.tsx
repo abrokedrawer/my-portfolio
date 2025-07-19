@@ -8,13 +8,14 @@ export function Skills() {
     'Adobe Illustrator',
     'VS Code',
     'RPG Maker',
-    'Figma - Wireframes'
+    'Figma - Wireframes',
+    'Spline'
   ]
 
   const devSkills = [
-    'C#', 'C', 'Python', 'JavaScript', 'HTML/CSS', 'MySQL', 
+    'JavaScript', 'HTML/CSS', 'MySQL', 
     'React', 'Next.js', 'Git', 'Matlab', 'LaTeX', 'Django' , 'MongoDB',
-    'Jest', 'TailwindCSS', 'UI/UX'
+    'Jest', 'TailwindCSS', 'UI/UX', 'Postgres','C#', 'C', 'Python', 
   ]
 
 return (

@@ -37,7 +37,7 @@ export default function MainContent() {
             </span>
 
             {/* Main content */}
-            <div className="w-full relative overflow:hidden"> {/* Added container for better mobile control */}
+            <div className="w-full relative overflow:hidden">
                 <div className="mb-8 sm:mb-12">
                     <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-4">
                         hi! i{`'`}m <span className="text-yellow-200">Aditya Negi</span>

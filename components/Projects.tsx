@@ -26,33 +26,33 @@ export function Projects({ projects }: ProjectsProps) {
       {/* Image Expansion Modal */}
       <ImageExpansionModal />
       
-      <h2 className="text-4xl font-bold text-yellow-200  m-8">DEVELOPMENT PROJECTS</h2>
+      <h2 className="text-4xl font-bold text-yellow-200  m-4">DEV PROJECTS</h2>
       
       <div className="space-y-4">
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className="flex flex-col md:flex-row gap-4 border border-gray-600 rounded-lg p-4 bg-gray-700 hover:bg-gray-650 transition-colors"
+            className="flex flex-col md:flex-row gap-10 border border-gray-600 rounded-lg p-4 bg-gray-700 hover:bg-gray-650 transition-colors"
           >
             {/* Left Column - Image */}
             {project.image && (
               <div 
-                className="md:w-1/3 cursor-zoom-in"
+                className="md:w-1/2 cursor-zoom-in"
                 onClick={() => project.image && setExpandedImage(project.image)}
               >
                 <Image
                   src={project.image}
                   alt={project.title}
-                  width={400}
-                  height={250}
-                  className="w-full h-auto rounded border border-gray-600 object-cover aspect-video"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto rounded border border-gray-600 object-cover "
                 />
               </div>
             )}
 
             {/* Right Column - Content */}
             <div className="flex-1 flex flex-col">
-              <h3 className="text-xl font-semibold text-gray-100">{project.title}</h3>
+              <h3 className="text-2xl font-semibold text-gray-100">{project.title}</h3>
               
               {project.description && (
                 <p className="text-gray-300 mt-1 text-medium">{project.description}</p>
@@ -74,7 +74,7 @@ export function Projects({ projects }: ProjectsProps) {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex justify-items-center mt-15 w-fit px-3 py-1
+                  className="flex justify-items-center mt-30 w-fit px-3 py-1
                    bg-purple-400 hover:bg-purple-600 rounded text-medium text-white transition-colors"
                 >
                   View Project
