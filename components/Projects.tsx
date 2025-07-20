@@ -22,7 +22,7 @@ export function Projects({ projects }: ProjectsProps) {
   const { ImageExpansionModal, setExpandedImage } = useImageExpansion()
   
   return (
-    <section className="space-y-6 bg-gray-800 p-4">
+    <section className="space-y-6 bg-[var(--dragstuff)] p-4">
       {/* Image Expansion Modal */}
       <ImageExpansionModal />
       
@@ -32,7 +32,7 @@ export function Projects({ projects }: ProjectsProps) {
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className="flex flex-col md:flex-row gap-10 border border-gray-600 rounded-lg p-4 bg-gray-700 hover:bg-gray-650 transition-colors"
+            className="flex flex-col md:flex-row gap-10 border border-gray-600 rounded-lg p-4 bg-[var(--dragstuff2)] hover:bg-gray-650 transition-colors"
           >
             {/* Left Column - Image */}
             {project.image && (
@@ -45,7 +45,7 @@ export function Projects({ projects }: ProjectsProps) {
                   alt={project.title}
                   width={600}
                   height={600}
-                  className="w-full h-auto rounded border border-gray-600 object-cover "
+                  className="w-full h-auto rounded border bg-[var(--dragstuff2)] object-cover "
                 />
               </div>
             )}
@@ -62,7 +62,7 @@ export function Projects({ projects }: ProjectsProps) {
                 {project.tags.map((tag) => (
                   <span 
                     key={tag} 
-                    className="px-2 py-1 bg-gray-600 rounded text-sm hover:shadow-gray-800 text-gray-200 flex justify-items-center"
+                    className="px-2 py-1 bg-gray-500 rounded text-sm hover:shadow-gray-800 text-gray-200 flex justify-items-center"
                   >
                     {tag}
                   </span>
@@ -75,7 +75,7 @@ export function Projects({ projects }: ProjectsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-items-center mt-30 w-fit px-3 py-1
-                   bg-purple-400 hover:bg-purple-600 rounded text-medium text-white transition-colors"
+                   bg-[var(--buttons)] hover:bg-[var(--buttons-hover)] rounded text-medium text-white transition-colors"
                 >
                   View Project
                 </a>
@@ -87,7 +87,7 @@ export function Projects({ projects }: ProjectsProps) {
       
       {/* Illustration Projects Section */}
       <h2 className="text-4xl font-bold font-sans text-[var(--brand-color)] mb-8">ILLUSTRATION PROJECTS</h2>
-      <div className="bg-gray-700 p-4 rounded-lg">
+      <div className="bg-[var(--dragstuff)] p-4 rounded-lg">
         <Gallery images={illustrationImages} />
       </div>
     </section>

@@ -33,11 +33,22 @@ body {
 
   --text-color: oklch(from var(--base-color) calc(l * 3) c h);
   --secondary-text-color: oklch(from var(--base-color) calc(l * 2.5) c h);
-  --brand-color: oklch(from var(--base-color) calc(l * 4) calc(c * 4) calc(h * 12));
+  --brand-color: oklch(from var(--base-color) calc(l * 3) calc(c * 3) calc(h *3));
 
-  --wave-one:rgb(108, 115, 161);
-  --wave-two: rgb(48, 48, 73);
-  --wave-grad: rgb(27, 25, 50);
+  --buttons:oklch(from var(--base-color) calc(l*2) calc(c * 2) calc(h *3));
+  --buttons-hover:oklch(from var(--base-color) calc(l* 1.5) calc(c * 2) calc(h *3));
+  
+  --header: oklch(from var(--base-color) calc(l * 0.4) c h);
+  --dragstuff: oklch(from var(--base-color) calc(l * 0.8) c h);
+  --dragstuff2: oklch(from var(--base-color) calc(l * 1.2) c h);
+
+  --wave-one: oklch(from var(--base-color) calc(l * 2) calc(c * 4) h);
+  --wave-two: oklch(from var(--base-color) calc(l * 0.9) calc(c * 2) h);
+  --wave-grad: oklch(from var(--base-color) calc(l * 0.4) calc(c * 3) h);
+
+  --a-wave-one:rgb(108, 115, 161);
+  --a-wave-two: rgb(48, 48, 73);
+  --a-wave-grad: rgb(27, 25, 50);
 
   background: var(--base-color);
   color: var(--foreground);

@@ -76,7 +76,7 @@ function DragStuff({
         {/* Window header - hidden on mobile */}
         {!isMobile && (
           <div
-            className='bg-gray-900 px-4 py-2 border-b border-gray-300 flex justify-between items-center' 
+            className='bg-[var(--header)] px-4 py-2 border-b border-gray-300 flex justify-between items-center' 
             onMouseDown={handleMouseDown}>
             <h3 className='font-bold text-2xl text-white'>{title}</h3>
             <button onClick={onClose} className='text-gray-100 hover:text-gray-400'>
@@ -89,7 +89,7 @@ function DragStuff({
         {isMobile && (
           <button 
             onClick={onClose}
-            className='absolute top-2 right-2 z-10 bg-gray-800 text-white p-2 rounded-full'
+            className='absolute top-2 right-2 z-10 bg-[var(--base-color)] text-white p-2 rounded-full'
           >
             ✕
           </button>
@@ -97,7 +97,7 @@ function DragStuff({
 
         {/* Scrollable content area */}
         <div 
-          className='flex-1 overflow-y-auto bg-gray-900 cursor-default'
+          className='flex-1 overflow-y-auto bg-[var(--header)] cursor-default'
           style={{
             maxHeight: isMobile ? '100vh' : 'calc(80vh - 50px)'
           }}>

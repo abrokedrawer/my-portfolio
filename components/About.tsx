@@ -7,7 +7,7 @@ function About() {
     
     <div className='flex flex-col md:flex-row gap-8 p-2 
     md:items-center justify-center border-b align-center
-     sticky top-0 bg-white dark:bg-gradient-to-b from-gray-900 to-gray-800 '>
+     sticky top-0 bg-gradient-to-t from-[var(--dragstuff)] to-[var(--base-color)] '>
     <div className='w-48 h-48 flex-shrink-0'>
     <Image src="/pfp01.jpg" width={96} height={96}
     className='rounded-full overflow-hidden w-full h-full' 
@@ -24,7 +24,7 @@ function About() {
     </div>
 
     {/* SCROLLABLE SECTIOn*/}
-    <div className='overflow-y-auto flex-1'>
+    <div className='overflow-y-auto bg-[var(--dragstuff)] flex-1'>
     
     <div className='mt-4 justify-items-start pl-2 text-xl '>
     <div className='justify-items-start'>
