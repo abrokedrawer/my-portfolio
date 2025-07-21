@@ -1,9 +1,9 @@
 const project9 = {
   id: 'wordle-v1',
-  title: 'Wordle Clone',
-  description: 'Clone of the famous NYtimes word guessing game, WORDLE',
+  title: 'Human VS AI Wordle',
+  description: 'A Wordle variation where you try to guess faster than an Optimized Wordle AI',
   tags: ['Next.js', 'Tailwind CSS', 'Javascript ', 'ReactJS'],
-  image: `/projectsPic/wordle.png`,
+  image: `/projectsPic/wordle02.png`,
   link:'https://github.com/abrokedrawer/wordle-clone'
 };
 
